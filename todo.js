@@ -28,7 +28,6 @@ function deleteToDo(event) {
   section.removeChild(li);
 
   const index = getSectionIndex(section);
-  console.log(toDos[index].list);
   const cleanToDos = toDos[index].list.filter(function (toDo) {
     return toDo.id !== parseInt(li.id);
   });
@@ -43,25 +42,16 @@ function moveToDo(event) {
   const index = getSectionIndex(section);
 
   if (index > 1) {
-    const text = TODOS_LS[index] + ": " + li.firstChild.innerText;
-    paintToDo(text, 1);
+    const text = TODOS_LS[index] + ": " + li.lastChild.innerText;
+    paintToDo(text, 0);
   } else if (index === 0) {
-    const text = li.firstChild.innerText;
+    const text = li.lastChild.innerText;
     paintToDo(text, 1);
   } else if (index === 1) {
-    const text = li.firstChild.innerText;
+    const text = li.lastChild.innerText;
     paintToDo(text, 0);
   }
 
-  deleteToDo(event);
-}
-
-function moveFinish(event) {
-  const btn = event.target;
-  const li = btn.parentNode;
-  const text = li.firstChild.innerText;
-
-  paintToDo(text, 1);
   deleteToDo(event);
 }
 
@@ -76,7 +66,7 @@ function paintToDo(text, index) {
     text: text,
   };
 
-  delBtn.innerHTML = `<i class="far fa-trash-alt"></i>`;
+  delBtn.innerText = "D";
   delBtn.classList.add("delBtn");
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
@@ -84,15 +74,15 @@ function paintToDo(text, index) {
 
   const moveBtn = document.createElement("button");
   if (index === 0) {
-    moveBtn.innerHTML = `<i class="fas fa-check"></i>`;
+    moveBtn.innerText = "F";
     moveBtn.classList.add("finishBtn");
     moveBtn.addEventListener("click", moveToDo);
   } else if (index === 1) {
-    moveBtn.innerHTML = `<i class="fas fa-redo"></i>`;
+    moveBtn.innerText = "R";
     moveBtn.classList.add("todayBtn");
     moveBtn.addEventListener("click", moveToDo);
   } else {
-    moveBtn.innerHTML = `<i class="fas fa-angle-double-left"></i>`;
+    moveBtn.innerText = "T";
     moveBtn.classList.add("moveBtn");
     moveBtn.addEventListener("click", moveToDo);
   }
