@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Vanilla JS</title>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    <h1>Study VanillaJS</h1>
-    <script src="index.js"></script>
+    <div class="background">
+        <div class="preferences">
+            <div class="js-clock"></div>
+            <div class="js-weather"></div>
+            <form class="js-form form">
+                <input type="text" placeholder="What is your name?" />
+            </form>
+            <h4 class="js-greetings greetings"></h4>
+        </div>
+
+        <div class="toDo">
+            <form class="js-toDoForm">
+                <select class="js-setSection"></select>
+                <input type="text" placeholder="Write a to do" />
+                <button>Add</button>
+            </form>
+            <div class="js-toDoList"></div>
+        </div>
+
+        <script src="background.js"></script>
+        <script src="greeting.js"></script>
+        <script src="clock.js"></script>
+        <script src="weather.js"></script>
+        <script src="todo.js"></script>
+    </div>
 </body>
 </html>

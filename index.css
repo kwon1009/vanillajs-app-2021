@@ -1,4 +1,122 @@
-body {
-    background-color: #8EA2F8;
+
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Nanum+Pen+Script&family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Hi+Melody&family=Nanum+Pen+Script&family=New+Tegomin&display=swap');
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'New Tegomin', serif;
+}
+
+.background {
+    padding: 50px;
+    width: 100vw;
+    height: 100vh;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+  
+.bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: fadeIn 0.5s linear;
+}
+  
+.preferences {
+    text-align: center;
+}
+
+.js-clock {
+    font-size: 5em;
+    font-weight: 800; 
     color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.js-clock span {
+    display: inline-block;
+    width: 2rem;
+}
+
+.weather {
+    margin-top: 1.2rem;
+}
+
+.form,
+.greetings {
+    display: none;
+    font-size: 1.5rem;
+}
+
+.showing {
+    display: block;
+}
+
+.js-toDoForm {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.todo {
+    float: left;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2rem;
+    margin: 1rem;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 13vw;
+    height: 50vh;
+}
+
+.todo h3 {
+    margin-top: 0;
+}
+
+.todo li {
+    margin-bottom: 0.3rem;
+    font-size: 1.3rem;
+}
+
+.todo span {
+    margin-right: 0.5rem;
+    font-family: 'Hi Melody', cursive;
+}
+
+.todo button {
+    margin-right: 0.2rem;
+    border: 0;
+    outline: 0;
+    border-radius: 0.3em;
+}
+
+.todo button:hover {
+    background-color: #CCCCCC;
+}
+
+.delBtn {
+    background-color: #FF4747;
+}
+
+.finishBtn {
+}
+
+.todayBtn {
+    background-color: #FFFD73;
+}
+
+.moveBtn {
+    background-color: #439BFF;
+
 }
