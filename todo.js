@@ -76,7 +76,7 @@ function paintToDo(text, index) {
     text: text,
   };
 
-  delBtn.innerText = "X";
+  delBtn.innerHTML = `<i class="far fa-trash-alt"></i>`;
   delBtn.classList.add("delBtn");
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
@@ -84,15 +84,15 @@ function paintToDo(text, index) {
 
   const moveBtn = document.createElement("button");
   if (index === 0) {
-    moveBtn.innerText = "F";
+    moveBtn.innerHTML = `<i class="fas fa-check"></i>`;
     moveBtn.classList.add("finishBtn");
     moveBtn.addEventListener("click", moveToDo);
   } else if (index === 1) {
-    moveBtn.innerText = "T";
+    moveBtn.innerHTML = `<i class="fas fa-redo"></i>`;
     moveBtn.classList.add("todayBtn");
     moveBtn.addEventListener("click", moveToDo);
   } else {
-    moveBtn.innerText = "<<";
+    moveBtn.innerHTML = `<i class="fas fa-angle-double-left"></i>`;
     moveBtn.classList.add("moveBtn");
     moveBtn.addEventListener("click", moveToDo);
   }
@@ -100,9 +100,9 @@ function paintToDo(text, index) {
   const htmlList = toDoList.querySelector("." + TODOS_LS[index]);
   htmlList.appendChild(li);
 
-  li.appendChild(span);
   li.appendChild(moveBtn);
   li.appendChild(delBtn);
+  li.appendChild(span);
 
   toDos[index].list.push(toDoObj);
   saveToDos(index);

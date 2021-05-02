@@ -24,7 +24,10 @@ function askForName() {
 function paintGreeting(text) {
   form.classList.remove(SHOWING_CN);
   greetings.classList.add(SHOWING_CN);
-  greetings.innerText = `${text}'s To DO List`;
+  greetings.innerText = `Hello, ${text}!`;
+  setTimeout(function () {
+    greetings.innerText = `${text}'s To DO List`;
+  }, 2000);
 }
 
 function loadName() {

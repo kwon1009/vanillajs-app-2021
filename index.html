@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Vanilla JS</title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
@@ -11,17 +12,19 @@
         <div class="preferences">
             <div class="js-clock"></div>
             <div class="js-weather"></div>
-            <form class="js-form form">
-                <input type="text" placeholder="What is your name?" />
-            </form>
-            <h4 class="js-greetings greetings"></h4>
+            <div style="height: 70px">
+                <form class="js-form form">
+                    <input type="text" placeholder="What is your name?" maxlength="20"/>
+                </form>
+                <h4 class="js-greetings greetings"></h4>
+            </div>
         </div>
 
         <div class="toDo">
             <form class="js-toDoForm">
                 <select class="js-setSection"></select>
-                <input type="text" placeholder="Write a to do" />
-                <button>Add</button>
+                <input type="text" placeholder="Write a to do" maxlength="20" />
+                <button><i class="fas fa-plus"></i></button>
             </form>
             <div class="js-toDoList"></div>
         </div>
